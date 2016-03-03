@@ -19,6 +19,8 @@ layout: default
 		<time>{{ page.date | date: '%B %-d, %Y' }}</time>
 	</div>
 
+	{% include post-tags.html %}
+
 	<div class="divider"></div>
 
 	{{ content }}
