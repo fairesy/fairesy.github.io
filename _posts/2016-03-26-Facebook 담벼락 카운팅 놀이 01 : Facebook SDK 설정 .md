@@ -1,5 +1,5 @@
 ---
-title: Facebook 담벼락 카운팅 놀이(1) : Facebook SDK 설정   
+title: Facebook 담벼락 카운팅 놀이 1 : Facebook SDK 설정   
 updated: 2016-03-26 12:03
 tags: sososimim facebook graph api 
 ---
