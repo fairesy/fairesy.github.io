@@ -1,0 +1,193 @@
+<!DOCTYPE html>	
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript" src="jquery-1.12.1.js"></script>
+<script>
+	var postCount;
+	var selfPostCount;
+	var publicPostCount;
+	var friendCount;
+	var createdTimeArray;
+
+  window.fbAsyncInit = function() {
+  	postCount = 0;
+  	selfPostCount = 0;
+  	publicPostCount = 0;
+  	friendCount = 0;
+  	createdTimeArray = new Array();
+
+    FB.init({
+      appId      : '1511935742448305',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<script>
+	// function myFacebookLogin() {
+		// $.ajax({
+		// 	url : "https://graph.facebook.com/v2.5/me/feed",
+		// 	dataType : "jsonp",
+		// 	success : function(data){
+		// 		console.log(data);
+		// 	}
+		// });
+		// $.get("https://graph.facebook.com/prismofmagazine/posts?access_token=1511935742448305|pEsFFbRlX9jFX-gAHedvGK0x-MI&callback=?",function(data){
+	 //  		console.log(data);
+	 //  	});
+	 //  FB.login(function(){
+	 //  	console.log("login");
+	 //  	$.get("https://graph.facebook.com/prismofmagazine/posts?access_token=1511935742448305|pEsFFbRlX9jFX-gAHedvGK0x-MI&callback=?",function(data){
+	 //  		console.log(data);
+	 //  	});
+
+	// limit파라미터로 불러오는 개수 조절 가능 
+	// FB.api("/me/feed?limit=200", function(response){
+	// 	getAllPostsOnWall(response)
+	// });	
+
+	function facebookLogin(){
+		FB.login(function(loginRes){
+			if (loginRes.error) {
+				console.log(loginRes.error.code);
+			};
+			FB.api("/me/feed", function(response){
+				getAllPostsOnWall(response);
+			});	
+		},{scope : "user_posts"});
+	}
+	function getAllPostsOnWall(data){
+		if (data && !data.error) {
+			// console.log(data);
+			for(var i=0; i<data.data.length; i++){
+				postCount += 1;
+				lookInsideSinglePost(data.data[i]);
+			}			
+		}
+		if(typeof(data.paging) != "undefined"){
+			FB.api(data.paging.next, function(response){
+				getAllPostsOnWall(response);
+			});
+		}
+		// logging();
+	}
+	function lookInsideSinglePost(postData){
+		console.log("진행중......");
+		FB.api("/"+postData.id+"?fields=created_time",
+			function(data){
+				var createdTime = data.created_time;
+				parseFBTimeIntoDate(createdTime);
+		});
+		FB.api(
+			"/"+postData.id+"?fields=privacy",
+		    function (retrievedPost) {
+		      if (retrievedPost && !retrievedPost.error) {
+		      	// var content = retrievedPost.message ? retrievedPost.message : retrievedPost.story;
+		       //  console.log("포스트 : " + content);
+
+		        if (retrievedPost.privacy.value === "SELF") {
+		        	selfPostCount += 1;
+		        }else if(retrievedPost.privacy.value === "EVERYONE"){
+		        	publicPostCount += 1;
+		        }else{
+		        	friendCount += 1;
+		        };
+		      }
+	    });	
+	}
+	function parseFBTimeIntoDate(createdTime){
+		//parse FB time to standard js Date format
+		//2012-01-07T07:53:14+0000
+		var timeArray = createdTime.split("T");
+		var yearMonthDay = timeArray[0].split("-");
+		var hourMinuteSecond = timeArray[1].split("+")[0].split(":");
+
+		var year = yearMonthDay[0];
+		var month = yearMonthDay[1];
+		var day = yearMonthDay[2];
+
+		var hour = hourMinuteSecond[0];
+		var minute = hourMinuteSecond[1];
+		var second = hourMinuteSecond[2];
+
+		var postDate = new Date(year,month,day);
+		postDate.setHours(hour);
+		postDate.setMinutes(minute);
+		postDate.setSeconds(second);
+
+		createdTimeArray.push(postDate);
+	}
+
+	// $("#start").on("click", facebookLogin);
+	// $("#start").promise().done(logging);
+
+	// $("button").on("click", function(){
+		// $.when(facebookLogin()).done(function(){
+		// });
+	// });
+
+	function figureOutWhenIPosted(arr){
+		var yearArchive = new Array();
+		var monthArchive = new Array();
+		var dayArchive = new Array();
+		var hourArchive = new Array();
+		for(var i=0; i<arr.length; i++){
+			yearArchive.push(arr[i].getFullYear());
+			monthArchive.push(arr[i].getMonth());
+			dayArchive.push(arr[i].getDay());
+			hourArchive.push(arr[i].getHours());
+		}
+
+		figureOutLoop(hourArchive, 0, "시에");
+		figureOutLoop(yearArchive, 2016, "년에");
+		figureOutLoop(monthArchive, 0, "월에");
+		figureOutLoop(dayArchive, 0, "day에");
+
+	}
+
+	function figureOutLoop(dataArray, current, unitMessage){
+		dataArray.sort();
+		var count = 0;
+		for(var i=0; i<dataArray.length; i++){
+			if(dataArray[i] != current){
+				if(count > 0){
+					console.log(current + unitMessage + count + "개의 포스트");
+				}
+				current = dataArray[i];
+				count = 1;
+			}else{
+				count += 1;
+			}
+		}
+		if (count > 0) {
+			console.log(current + unitMessage + count + "개의 포스트");
+		}
+	}
+
+	function logging(){
+		console.log("담벼락 글 수 : " + postCount);
+		console.log("나만보기 포스트 : " + selfPostCount);
+		console.log("친구공개 포스트 : " + friendCount);
+		console.log("전체공개된 포스트 : " + publicPostCount);
+		figureOutWhenIPosted(createdTimeArray);
+	}
+
+	//.....??왜 버튼에 onclick으로 넣으면 되고, on 으로 이벤트 바인딩을 시키면 안되는거지...?
+	//getAllPostsOnWall가 끝난 시점에 logging을 실행하고 싶다. 어떻게 하지...?
+	//timeArray에서 각 연도별, 월별, 요일별, 시간별로 묶어서 2015년엔 몇개의 포스트, 가장 많이 포스팅한 시간대는 몇시?같은 정보를 만들어내고 싶다. 하우??
+	
+</script>
+<button id="start" onclick="facebookLogin()">내 담벼락 털어보기</button>
+</body>
+</html>
