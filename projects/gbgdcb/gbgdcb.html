@@ -8,31 +8,73 @@
 			width: 100%;
 			height: 100%;
 		}
+        #wrapper{
+            width: 600px;
+            height: 540px;
+            position: absolute;
+			margin: auto;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+        }
+        #title{
+            width: 600px;
+            height: 40px;
+            font-family: 'KoPub Batang', serif;
+			font-size: 25px;
+            padding-left: 15px;
+        }
 		textarea{
+/*
 			position: absolute;
 			margin: auto;
 			top: 0;
 			bottom: 0;
 			left: 0;
 			right: 0;
+*/
+            padding: 15px;
+            margin-top: 30px;
 			width: 600px;
 			height: 350px;
 			font-family: 'KoPub Batang', serif;
-			font-size: 25px;
+			font-size: 20px;
 		}
+        button{
+            position: absolute;
+            bottom: 40px;
+            right: 0;
+            width: 300px;
+            height: 40px;
+            background-color: rgb(40,40,40);
+            color: #ffffff;
+            border: 0;
+            font-size: 20px;
+            
+        }
+        span{
+            position: absolute;
+            bottom: 10px;
+            right: 0;
+            display: none;
+        }
 	</style>
 </head>
 <body>
-	<input type="text" id="title" placeholder="untitled"></input>
-	<textarea id="input"></textarea>
-	<button id="splitChars">convert</button>
-
+    <div id="wrapper">
+        <input type="text" id="title" placeholder="이야기의 제목이 있나요?"></input>
+        <textarea id="input" placeholder="당신의 이야기를 들려주세요"></textarea>
+        <button id="splitChars">악보로 변환하기</button>
+    <span id="message">저장한 xml파일은 <a href="https://musescore.org/ko">MuseScore</a>같은 악보 프로그램에서 확인해주세요</span>        
+    </div>
 	<script type="text/javascript" src="./toKorChars.js"></script>
 	<script type="text/javascript" src="./rule.js"></script>
 	<script type="text/javascript">
 		var convertButton = document.getElementById("splitChars");
 		var textInput = document.getElementById("input");
 		var title = document.getElementById("title");
+        var msg = document.getElementById("message");
 		convertButton.addEventListener("click", function(){
 			console.log("original message-----------------------------");
 			console.log(textInput.value);
@@ -47,6 +89,8 @@
 			var templateWithTitleFinal = templateWithTitle.replace("<%=titleText=>", title.value);
 			var musicXml = templateWithTitleFinal.replace("<%convertedNotes%>", convertedMeasures);
 			textInput.value = musicXml;
+            title.value = "변환된 결과를 복사해서 .xml 확장자로 저장해주세요!";
+            msg.style.display = "block";
 		});
 	</script>
 </body>
