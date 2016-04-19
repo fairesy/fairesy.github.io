@@ -18,9 +18,9 @@ cmd + p 키를 누른 것처럼 simulating key event니 뭐니 하는 걸로 검
 **media="print"** 부분이, 인쇄할 경우에 이 css를 사용하도록 해준다.    
 
 다음은 인쇄 버튼.    
-
-> <a href="javascript:window.print()"><button id="print-button">인쇄하기</button></a>
-
+```
+<a href="javascript:window.print()"><button id="print-button">인쇄하기</button></a>
+```
 <a href="javascript:window.print()"><button style="posirion:relative;margin:0 auto;width:200px;height:45px;background-color:rgb(200,200,200);font-size:15px;border:0px;cursor:pointer;border-radius:5px;">인쇄하기</button></a>
 
 이렇게 만든 버튼을 클릭하면 '인쇄'를 클릭한 것과 같은 인쇄 옵션 창이 뜬다.    
