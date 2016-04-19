@@ -12,9 +12,9 @@ tags: css print
 cmd + p 키를 누른 것처럼 simulating key event니 뭐니 하는 걸로 검색해봤는데, 사실은 훨씬 간단했다. 
 
 일단 인쇄를 위한 css는 다음과 같이 넣어준다. 
-```html
+<pre><code class="language-html">
 <link rel="stylesheet" href="../../stylesheets/coloringpageprint.css" type="text/css" media="print" />
-```
+</code></pre>
 
 **media="print"** 부분이, 인쇄할 경우에 이 css를 사용하도록 해준다.
 
