@@ -1,7 +1,7 @@
 ---
-title: '인쇄'버튼 만들기   
-updated: 2016-04-19 17:27
-tags: css print  
+title: 인쇄 버튼 만들기   
+updated: 2016-04-19 17:13
+tags: css print 
 ---
 
 ### '인쇄'버튼을 만들어보자 
