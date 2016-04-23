@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata></metadata>
+<defs>
+<font id="barundotumregular" horiz-adv-x="310" >
+<font-face units-per-em="1000" ascent="800" descent="-200" />
+<missing-glyph horiz-adv-x="500" />
+<glyph horiz-adv-x="0" />
+<glyph horiz-adv-x="333" />
+<glyph unicode=" " />
+<glyph unicode="&#xa0;" />
+<glyph unicode="&#x2000;" horiz-adv-x="394" />
+<glyph unicode="&#x2001;" horiz-adv-x="789" />
+<glyph unicode="&#x2002;" horiz-adv-x="394" />
+<glyph unicode="&#x2003;" horiz-adv-x="789" />
+<glyph unicode="&#x2004;" horiz-adv-x="263" />
+<glyph unicode="&#x2005;" horiz-adv-x="197" />
+<glyph unicode="&#x2006;" horiz-adv-x="131" />
+<glyph unicode="&#x2007;" horiz-adv-x="131" />
+<glyph unicode="&#x2008;" horiz-adv-x="98" />
+<glyph unicode="&#x2009;" horiz-adv-x="157" />
+<glyph unicode="&#x200a;" horiz-adv-x="43" />
+<glyph unicode="&#x2019;" horiz-adv-x="920" d="M128 573l29 -42q41 19 67.5 60t26.5 91v107h-122v-114h61q0 -65 -62 -102z" />
+<glyph unicode="&#x201d;" horiz-adv-x="920" d="M63 573l29 -42q41 19 67.5 60t26.5 91v107h-122v-114h61q0 -65 -62 -102zM253 573l29 -42q41 19 67.5 60t26.5 91v107h-122v-114h61q0 -65 -62 -102z" />
+<glyph unicode="&#x202f;" horiz-adv-x="157" />
+<glyph unicode="&#x205f;" horiz-adv-x="197" />
+</font>
+</defs></svg> 

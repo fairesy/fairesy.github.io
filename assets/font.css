@@ -12,7 +12,8 @@
     src: url('./fonts/barundotum_subset-webfont.eot?#iefix') format('embedded-opentype'),
          url('./fonts/barundotum_subset-webfont.woff2') format('woff2'),
          url('./fonts/barundotum_subset-webfont.woff') format('woff'),
-         url('./fonts/barundotum_subset-webfont.ttf') format('truetype');
+         url('./fonts/barundotum_subset-webfont.svg#barundotumregular') format('svg');
     font-weight: normal;
     font-style: normal;
+
 }
