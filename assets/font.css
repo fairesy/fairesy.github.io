@@ -21,11 +21,11 @@
 /*바른바탕체*/
 @font-face {
     font-family: 'bareunbatangotf1light';
-    src: url('bareunbatangotfl-webfont.eot');
-    src: url('bareunbatangotfl-webfont.eot?#iefix') format('embedded-opentype'),
-         url('bareunbatangotfl-webfont.woff2') format('woff2'),
-         url('bareunbatangotfl-webfont.woff') format('woff'),
-         url('bareunbatangotfl-webfont.svg#bareunbatangotf1light') format('svg');
+    src: url('./fonts/bareunbatangotfl-webfont.eot');
+    src: url('./fonts/bareunbatangotfl-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/bareunbatangotfl-webfont.woff2') format('woff2'),
+         url('./fonts/bareunbatangotfl-webfont.woff') format('woff'),
+         url('./fonts/bareunbatangotfl-webfont.svg#bareunbatangotf1light') format('svg');
     font-weight: normal;
     font-style: normal;
 }
