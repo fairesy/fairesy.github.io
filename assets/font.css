@@ -4,3 +4,15 @@
 @import url(http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
 @import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/*BareunDotumOTF1*/
+@font-face {
+    font-family: 'barundotumregular';
+    src: url('./fonts/barundotum_subset-webfont.eot');
+    src: url('./fonts/barundotum_subset-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/barundotum_subset-webfont.woff2') format('woff2'),
+         url('./fonts/barundotum_subset-webfont.woff') format('woff'),
+         url('./fonts/barundotum_subset-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
