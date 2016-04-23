@@ -9,6 +9,7 @@ tags: spring jquery file-upload
 ### 1 설치하기
 
 우리팀은 bower로 외부 라이브러리를 관리하기로 했으므로, bower를 통해 라이브러리를 설치한다.     
+
 ```
 > bower install fileupload --save
 ```
@@ -56,6 +57,7 @@ $(function () {
 [bower-installer](https://github.com/blittle/bower-installer)라는 도구를 사용하여 프로젝트 루트에서 `bower-installer` 명령을 실행하면, bower dependency가 `static/lib` 폴더로 설치됩니다.
 
 이 안에 들어있는 것들 중에서 필요한 js파일들을 프로젝트 **src/main/resouces**/**static**/**lib** 로 복사해온다.  
+
 ```
 //bower.json
 "install": {
@@ -80,6 +82,7 @@ src/main/resouces
 ```
 
 그리고 타임리프 문법에 맞춰서 스크립트 파일들의 src를 변경해준다.     
+
 ```html
 <script th:src="@{/lib/blueimp-file-upload/jquery.ui.widget.js}"></script>
 <script th:src="@{/lib/blueimp-file-upload/jquery.iframe-transport.js}"></script>
@@ -126,6 +129,7 @@ $(function () {
 #### jQuery File Upload는 서버에 **Multipartfile**을 던져주고, **JSON**으로 응답해주기를 바란다. 
 
 그러니까, 이런 형태의 응답을 기대한단다. ~~(다른 형식으로 응답받을 수 있는건진 자세히 안봤..)~~
+
 ```json
 {"files": [
   {
