@@ -1,0 +1,19 @@
+{
+  "name": "readymade_document",
+  "main": "index.js",
+  "homepage": "https://github.com/fairesy/fairesy.github.io",
+  "description": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "normalize-css": "^4.1.1",
+    "roboto-fontface": "^0.4.5"
+  }
+}
