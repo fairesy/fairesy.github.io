@@ -1,3 +1,5 @@
 $( document ).ready(function() {
-  $("#print_name").val($("#name").val());
+  button.on("click", function(){
+    $("#print_name").val($("#name").val());
+  });
 });

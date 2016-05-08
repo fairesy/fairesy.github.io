@@ -1,10 +1,10 @@
-@page {
+/*@page {
   size: A4 portrait;
   margin: 20mm;
   @top-left{
     background-color: rgb(255,0,0);
   }
-}
+}*/
 
 body{
   background-color: #fff;
