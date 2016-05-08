@@ -12,6 +12,9 @@ body{
 #screen{
   display: none;
 }
+#print{
+  display: block;
+}
 #print_name{
   width: 100%;
   text-align: center;
