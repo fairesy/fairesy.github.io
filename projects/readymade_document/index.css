@@ -1,3 +1,22 @@
-#print{
+/*#print{
   display: none;
+}*/
+@media print{
+  body{
+    background-color: #fff;
+  }
+  #screen{
+    display: none;
+  }
+  #print{
+    display: block;
+  }
+  #print_name{
+    width: 20cm;
+    height: 3cm;
+    text-align: center;
+    font-size: 40pt;
+    /*font-family: "Roboto-Light";*/
+    margin-top: 10mm;
+  }
 }
