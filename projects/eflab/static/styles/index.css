@@ -2,6 +2,7 @@ html,body{
   width:100%;
   height:100%;
   font-family: 'DINBlack', sans-serif;
+  background-color: #f0f0f0;
 }
 ul{
   list-style:none;
@@ -65,23 +66,97 @@ main{
   padding-left:70px;/*nav width*/
 }
 .cover-contents{
+  position: relative;
   width:1200px;/*windowWidth-navWidth*/
-  /*height:250px;*/
   /*border:2px solid blue;*/
 }
-.cover-contents img{
+.cover-contents .image{
   width: 100%;
+  vertical-align: top; /*cover-contents 사이에 생긴 gap 해결책*/
 }
+.cover-contents .text_collaboration{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+.cover-contents .text_title{
+  position: absolute;
+  top: 29%;
+  left: 26%;
+  text-align: center;
+  font-family: "DINRegular";
+  font-size: 9pt;
+}
+.cover-contents .text_title span{
+  margin: 5px 0 5px 0;
+  display: block;
+}
+.cover-contents .text_title img{
+  margin: 10px 0 10px 0;
+}
+.cover-contents .text-issue{
+  position: absolute;
+  top: 23%;
+  right: 18%;
+  text-align: center;
+  font-family: "DINRegular";
+  font-size: 9pt;
+}
+.cover-contents .text-issue img{
+  margin: 10px 0 10px 0;
+}
+.cover-contents .text-issue .movie-title{
+  font-size: 26pt;
+  display: block;
+  margin: 10px 0 10px 0;
+}
+
 #contents-wrapper{
   width:1200px;
   height:100px;/*없을 경우 footer가 영역 침범. clearfix가 이거 해결책인지 알아보기*/
 }
 .contents{
   width:24%;
-  height:100px;/*임의값*/
+  /*height:100px;/*임의값*/
   margin:4px;
-  border:1px solid black;
+  border:2px solid #d8d8d8;
   float:left;
+  background-color: #fff;
+  text-align: center;
+  padding-top: 3px;
+}
+.contents img{
+  width: 98%;
+
+}
+.contents .description{
+  width: 80%;
+  padding-top: 20px;
+  margin: 0 auto;
+  text-align: left;
+}
+.description span{
+  font-family: "DINBlack";
+  font-size: 12pt;
+}
+.description p{
+  font-size: 8pt;
+  line-height: 16pt;
+}
+.description .detail{
+  width: 100%;
+  height: 100px;/*responsive height needed*/
+  margin-bottom: 10px;
+}
+.description .detail img, .description .detail p{
+  float: left;
+}
+.description .detail img{
+  width: 45%;
+}
+.description .detail p{
+  padding-left: 16px;
+  box-sizing: border-box;
 }
 /* #contents-wrapper:after{
   contents:"";
