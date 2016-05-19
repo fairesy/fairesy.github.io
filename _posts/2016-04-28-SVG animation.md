@@ -1,7 +1,7 @@
 ---
 title: svg_animation
-date: 2016-04-28 21:07
-tag: svg animation
+updated: 2016-04-28 21:07
+tags: svg animation
 ---
 
 ### SVG가 이미지(png,jpg,etc.)보다 좋은 이유 
