@@ -1,0 +1,56 @@
+/*component css preset*/
+body{
+  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+ul,li{
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+  color: rgb(40,40,40);
+}
+input[type="checkbox"] {
+    outline: none;
+}
+
+/*component css*/
+.pagination{
+  width: 242px;
+  height: 30px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-weight: 900;
+}
+.pagination li{
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  list-style: none;
+  float: left;
+  margin-right: 5px;
+  border-radius: 10%;
+  box-sizing: border-box;
+}
+
+/*TODO IE8에서는 pointer-events CSS가 작동하지 않는다.*/
+.disabled a{
+  color: #d9d9d9;
+  pointer-events: none;
+  cursor: default;
+}
+
+.selected{
+  background-color: rgb(42,125,237);
+}
+.selected a{
+  color: #fff;
+}
+
+.pagination li:first-child, .pagination li:last-child{
+  border-radius: 50%;
+}
+.pagination li:last-child{
+  margin-right: 0;
+}
