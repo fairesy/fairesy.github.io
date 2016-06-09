@@ -49,6 +49,7 @@ ul#filterManager{
     height: 60px;
 }
 li.filter{
+    list-style:none;
     float: left;
     width: 180px;
     height: 40px;
