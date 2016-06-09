@@ -1,0 +1,67 @@
+#uploadWrapper{
+	position: absolute;
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	background-color: rgb(100,100,100);
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: 100;
+	text-align: center;
+}
+#uploadImage{
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+    cursor: pointer;
+}
+
+#canvasWrapper{
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+
+canvas{
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+ul#filterManager{
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 1000px;
+    height: 60px;
+}
+li.filter{
+    float: left;
+    width: 180px;
+    height: 40px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 3px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+li.filter:hover{
+    background-color: gray;
+    color: #ffffff;
+}

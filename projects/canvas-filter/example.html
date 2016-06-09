@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>canvas example</title>
+	<meta charset= "utf-8">
+	<link rel="stylesheet" type="text/css" href="./reset.css">
+	<link rel="stylesheet" type="text/css" href="./canvas.css">
+</head>
+<body>
+
+	<div id="uploadWrapper">파 일 선 택
+		<input id="uploadImage" type="file" onchange="handlingFile(this);"/>
+	</div>
+	<div id="canvasWrapper"></div>
+    <ul id="filterManager">
+        <li class="filter">invert</li>
+        <li class="filter">grayscale</li>
+        <li class="filter">sepia</li>
+        <li class="filter">lighten</li>
+        <li class="filter">darken</li>
+    </ul>
+
+	<script type="text/javascript">
+
+        function handlingFile(inputElement){
+            var inputFile = inputElement.files[0];
+            if(inputFile){
+                var reader = new FileReader();
+                reader.readAsDataURL(inputFile);
+                reader.onload = function(){
+                    var elCanvas = new Canvas(400,300);
+                    var parentNode = document.getElementById("canvasWrapper");
+                    elCanvas.createFromFile(reader.result, parentNode);
+                }
+            }
+        }
+   
+	</script>
+	<script type="text/javascript" src="./canvas.js"></script>
+</body>
+</html>
