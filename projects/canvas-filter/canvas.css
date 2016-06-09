@@ -48,8 +48,10 @@ ul#filterManager{
     width: 1000px;
     height: 60px;
 }
+li{
+	list-style:none;
+}
 li.filter{
-    list-style:none;
     float: left;
     width: 180px;
     height: 40px;
