@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>d3</title>
+        <meta charset="utf-8">
+        <style>
+            .bar{
+                width: 20px;
+                background-color: #f1c40f;
+                position: relative;
+                display: inline-block;
+                margin-right: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <svg width="500px" height="200px">
+            <rect x="0" y="0" width="500" height="50"></rect>
+            <circle cx="250" cy="75" r="25" stroke-width="5" stroke="orange" fill="yellow"></circle>
+            <line x1="0" y1="75" x2="500" y2="100" stroke="blue"></line>
+            <text x="250" y="100" font-size="25" fill="red">재미재미</text>
+        </svg>
+        <div class="wrapper"></div>
+        <script src="https://d3js.org/d3.v4.0.0-alpha.50.min.js"></script>
+        <script>
+              var dataArray = [5, 10, 15, 20, 25];
+            var w = 500;
+            var h = 400;
+//            var dataArray = [5, 10, 15, 20, 25, 40, 3, 10, 26, 23, 9, 14, 20];
+              //random data 생성 
+//            var dataArray = [];
+//            for(var i=0; i<30; i++){
+//                var newNum = Math.floor(Math.random()*30);
+//                dataArray.push(newNum);
+//            }
+            d3.select(".wrapper")
+                .selectAll("div")
+                .data(dataArray)
+                .enter()
+                .append("div")
+                .classed("bar", true)
+                .style("height", function(d){ return (d*10) + "px"; });
+            var svg = d3.select(".wrapper")
+                .append("svg")
+                .attr("width", w)
+                .attr("height", h);
+            
+            var rects = svg.selectAll("rect")
+                .data(dataArray)
+                .enter()
+                .append("rect")
+                .attr("width", w/dataArray.length - 15)
+                .attr("height", function(d){
+                    return d*4;
+                })
+                .attr("x", function(d, i){
+                    return i * (w/dataArray.length);
+                })
+                .attr("y", function(d){
+                    return h-(d*4);
+                })
+                .attr("fill", function(d){
+                    return "rgb(0,0,"+ d*10 +")"
+                });
+            var labels = svg.selectAll("text")
+                .data(dataArray)
+                .enter()
+                .append("text")
+                .text(function(d){
+                    return d;
+                })
+                .attr("text-anchor", "middle")
+                .attr("x", function(d, i){
+                    return i * (w/dataArray.length) + (w/dataArray.length - 15)/2
+                })
+                .attr("y", function(d){
+                    return h-(d*4) + 15;
+                })
+                .attr("fill", "white");
+//                .attr({
+//                    "x" : function(d, i){
+//                        return i * (w/dataArray.length);
+//                    },
+//                    "y" : function(d){
+//                        return h-(d*4);
+//                    }
+//                });
+            
+            var circles = svg.selectAll("circle")
+                .data(dataArray)
+                .enter()
+                .append("circle");
+            circles.attr("cx", function(d, i){
+                return (i*50) + 25;
+            })
+            .attr("cy", h/2)
+            .attr("stroke", "orange")
+            .attr("stroke-width", "5px")
+            .attr("r", function(d){
+                return d;
+            })
+            .attr("fill", function(d){
+                if(d>10){
+                    return "red";
+                }
+            });
+        </script>
+    </body>
+</html>
