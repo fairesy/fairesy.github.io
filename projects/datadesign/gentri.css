@@ -1,0 +1,96 @@
+html, body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(31, 41, 48);
+}
+section{
+    float: left;
+}
+#map{
+    width: 69%;
+    height: 100%;
+    position: relative;
+}
+#map .wrapper{
+    width : -webkit-calc(100% - 80px); /* for Chrome, Safari */
+    width :    -moz-calc(100% - 80px); /* for Firefox */
+    width :         calc(100% - 80px); /* for IE */
+    height : -webkit-calc(100% - 80px); /* for Chrome, Safari */
+    height :     -moz-calc(100% - 80px); /* for Firefox */
+    height :          calc(100% - 80px); /* for IE */
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+#map .wrapper .map-seoul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#map div.wrppaer div.map-jiga-modal iframe{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+#map .wrapper .map-jiga-modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: none;
+}
+#map .wrppaer .map-jiga-modal img{
+    width: 100%;
+    height : -webkit-calc(100% - 80px); /* for Chrome, Safari */
+    height :     -moz-calc(100% - 80px); /* for Firefox */
+    height :          calc(100% - 80px); /* for IE */
+}
+.mapo-gu{
+    cursor: pointer;
+}
+.mapo-gu:hover{
+    background-color: red;
+    fill:rgb(249,104,4);
+}
+svg{
+    position: absolute;
+    top: -70px;
+}
+svg g:first-child path{
+    fill:#CCCCCC;
+    pointer-events:all;
+}
+
+#data{
+/*    position: absolute;*/
+    width: 31%;
+    height: 97%;
+    top: 1%;
+    box-sizing: border-box;
+    border-left: 1px solid rgba(150,150,150, 0.5);
+    background-color: rgb(240,240,240);
+    text-align: center;
+    position: relative;
+    background-color: rgb(31, 41, 48)
+}
+#data img{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
