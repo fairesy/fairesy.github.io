@@ -26,21 +26,30 @@
     </div>
     <main>
         <section id="map-section">
-            <iframe frameborder="0" src="https://junjimin0220.carto.com/viz/247b8be6-53f8-11e6-aa6d-0e98b61680bf/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+            <iframe id="jiga-map" frameborder="0" src="https://junjimin0220.carto.com/viz/247b8be6-53f8-11e6-aa6d-0e98b61680bf/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
         </section>
         <section id="data-section">data</section>    
     </main>
     
     <script src="jquery.min.js"></script>
     <script>
-        $("nav .close-icon").on("click", function(){
-            $("nav").hide();
-            $(".menu-icon-wrapper").show();
+        $(document).ready(function(){
+            $("#jiga-map").load(function(){
+               $("#jiga-map").contents().find(".cartodb-text").hide();
+            });
+            bindNavEvents();
         });
-        $(".menu-icon-wrapper img").on("click", function(){
-            $("nav").show();
-            $(".menu-icon-wrapper").hide();
-        });
+        
+        function bindNavEvents(){
+            $("nav .close-icon").on("click", function(){
+                $("nav").hide();
+                $(".menu-icon-wrapper").show();
+            });
+            $(".menu-icon-wrapper img").on("click", function(){
+                $("nav").show();
+                $(".menu-icon-wrapper").hide();
+            });
+        }
     </script>
 </body>
 </html>
