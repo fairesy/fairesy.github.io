@@ -5,12 +5,15 @@
     <title>젠트리서울</title>
     <link rel="stylesheet" href="//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css">
     <link rel="stylesheet" href="dong.css">
+    <link rel="stylesheet" href="nav.css">
 </head>
 
 <body>
 <nav>
         <div class="wrapper">
-            <img class="logo" src="./resources/gentriseoul.png" alt="gentriseoul-logo">
+            <a href="/">
+            <img class="logo" src="./resources/gentriseoul.png" alt="gentriseoul-logo">   
+           </a>
             <ul class="dong-list square">
                 <li><a href="/mangwon.html">망원동</a></li>
                 <li><a href="/sinsa.html">신사동</a></li>
@@ -24,16 +27,17 @@
     <div class="menu-icon-wrapper">
         <img src="./resources/menu.png" alt="menu-button">
     </div>
+    <main>
+        <section id="map-section">
+            <iframe id="seven" frameborder="0" src="https://junjimin0220.carto.com/viz/741c4e4c-548e-11e6-9469-0e98b61680bf/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+            <iframe id="sixteen" frameborder="0" src="https://junjimin0220.carto.com/viz/f8b12eb6-53f8-11e6-9e0e-0e8c56e2ffdb/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+        </section>
+        <section id="data-section">
+        <button id="seven-button">2007</button>
+            <button id="sixteen-button">2016</button>
+        </section>    
+    </main>
     <script src="jquery.min.js"></script>
-    <script>
-        $("nav .close-icon").on("click", function(){
-            $("nav").hide();
-            $(".menu-icon-wrapper").show();
-        });
-        $(".menu-icon-wrapper img").on("click", function(){
-            $("nav").show();
-            $(".menu-icon-wrapper").hide();
-        });
-    </script>
+    <script src="menu.js"></script>
 </body>
 </html>

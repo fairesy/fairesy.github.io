@@ -1,91 +1,3 @@
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-
-html,body{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-p, ul{
-    margin: 0;
-    padding: 0;
-}
-nav{
-    position: fixed;
-    top: 0;
-    width: 95%;
-    height: 55px;
-    background-color: transparent;
-    z-index: 100;
-    margin: auto;
-    left: 0;
-    right: 0;
-    border-bottom: 3px solid rgba(200,200,200,0.4);
-    display: none;
-}
-nav .wrapper{
-    position: absolute;
-    width: 95%;
-    height: 100%;
-    margin: auto;
-    left: 0;
-    right: 0;
-}
-nav .wrapper .logo{
-    height: 100%;
-    position: absolute;
-    left: 0;
-    cursor: pointer;
-}
-
-nav .dong-list{
-    width: 55%;
-    font-size: 12pt;
-    line-height: 55px;
-    font-weight: bold;
-    list-style: none;
-    overflow: auto;
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-}
-nav .dong-list li{
-    float: left;
-    width: 20%;
-    height: 100%;
-    text-align: center;
-    color: rgb(200,200,200);
-}
-nav .dong-list li a:hover{
-    color: rgb(251,185,34);
-    cursor: pointer;
-}
-
-nav .dong-list li a{
-    text-decoration: none;
-    color: rgb(200,200,200);
-}
-
-nav .close-icon{
-    height: 100%;
-    position: absolute;
-    right: 0;
-    cursor: pointer;
-}
-
-.menu-icon-wrapper{
-    z-index: 50;
-    position: fixed;
-    width: 40px;
-    height: 55px;
-    top: 0;
-    right: 5%;
-}
-.menu-icon-wrapper img{
-    height: 100%;
-    cursor: pointer;
-}
-
 #title-section{
     width: 100%;
     height: 100%;
@@ -133,9 +45,14 @@ nav .close-icon{
     text-align: center;
     color: rgb(200,200,200);
 }
-#title-section .dong-list li:hover{
+#title-section .dong-list li a:hover{
     color: rgb(251,185,34);
     cursor: pointer;
+}
+
+#title-section .dong-list li a{
+    text-decoration: none;
+    color: rgb(100,100,100);
 }
 
 #detail-section{
