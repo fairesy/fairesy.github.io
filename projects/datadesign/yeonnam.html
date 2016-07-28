@@ -9,11 +9,11 @@
 </head>
 
 <body>
-<nav>
+    <nav>
         <div class="wrapper">
             <a href="http://fairesy.github.io/projects/datadesign/gentriseoul.html">
-            <img class="logo" src="./resources/gentriseoul.png" alt="gentriseoul-logo">   
-           </a>
+                <img class="logo" src="./resources/gentriseoul.png" alt="gentriseoul-logo">
+            </a>
             <ul class="dong-list square">
                 <li><a href="http://fairesy.github.io/projects/datadesign/mangwon.html">망원동</a></li>
                 <li><a href="http://fairesy.github.io/projects/datadesign/sinsa.html">신사동</a></li>
@@ -29,15 +29,33 @@
     </div>
     <main>
         <section id="map-section">
+            <div id="sub-nav">
+                <ul>
+                    <li class="title">망원동 공시지가</li>
+                    <li class="year">2006</li>
+                    <li class="year active">2007</li>
+                    <li class="year">2008</li>
+                    <li class="year">2009</li>
+                    <li class="year">2010</li>
+                    <li class="year">2011</li>
+                    <li class="year">2012</li>
+                    <li class="year">2013</li>
+                    <li class="year">2014</li>
+                    <li class="year">2015</li>
+                    <li class="year active">2016</li>
+                </ul>
+            </div>
             <iframe id="seven" frameborder="0" src="https://junjimin0220.carto.com/viz/6841815c-53d8-11e6-bafb-0e8c56e2ffdb/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
             <iframe id="sixteen" frameborder="0" src="https://junjimin0220.carto.com/viz/8e3c373c-53ea-11e6-aa1b-0e98b61680bf/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
         </section>
         <section id="data-section">
-        <button id="seven-button">2007</button>
-            <button id="sixteen-button">2016</button>
-                </section>    
+            <div class="data">07년 대비 16년 공시지가 상승률</div>
+            <div class="data">연도별 폐점 수 추이</div>
+            <div class="data">연도별 공시지가 추이</div>
+        </section>
     </main>
     <script src="jquery.min.js"></script>
     <script src="menu.js"></script>
 </body>
+
 </html>
