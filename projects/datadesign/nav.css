@@ -89,7 +89,7 @@ nav .close-icon{
 
 #sub-nav{
     position: absolute;
-    width: 880px;
+    width: 775px;
     height: 35px;
     background-color: #fff;
     z-index: 100;
@@ -117,9 +117,10 @@ nav .close-icon{
     width: 150px;
     box-shadow: 2px 0 5px .5px rgb(150,150,150);
     display: block;
+    margin-right: 10px;
 }
 #sub-nav ul li.year{
-    width: 65px;
+    width: 55px;
     font-size: 10pt;
     font-weight: 700;
     padding-top: 1px;
