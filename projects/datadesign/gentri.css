@@ -1,3 +1,10 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+p, ul{
+    margin: 0;
+    padding: 0;
+}
+
 html, body{
     width: 100%;
     margin: 0;
@@ -93,4 +100,20 @@ svg g:first-child path{
     right: 0;
     bottom: 0;
     display: none;
+}
+nav{
+    position: fixed;
+    width: 50px;
+    height: 30px;
+    bottom: 20px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+nav div{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(77,77,77);
 }

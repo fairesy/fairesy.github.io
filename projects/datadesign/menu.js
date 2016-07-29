@@ -1,6 +1,7 @@
 $(document).ready(function(){
     bindNavEvents();
     onClickYearButton();
+    onClickMenu();
 });
 
 function bindNavEvents(){
@@ -22,7 +23,7 @@ function bindNavEvents(){
     });
 }
 
-function onClickYearButton(e){
+function onClickYearButton(){
     $("#seven-button").click(function(){
         $("#seven").show();
         $("#sixteen").hide();
@@ -51,4 +52,25 @@ function onClickYearButton(e){
 //    
 //    var samchung_07 = "https://junjimin0220.carto.com/viz/741c4e4c-548e-11e6-9469-0e98b61680bf/embed_map";
 //    var samchung_16 = "https://junjimin0220.carto.com/viz/f8b12eb6-53f8-11e6-9e0e-0e8c56e2ffdb/embed_map";
+}
+
+function onClickMenu(){
+    $("nav .title-nav").click(function(){
+        $("nav .title-nav").addClass("selected");
+        $("nav .detail-nav").removeClass("selected");
+        $("main").animate({
+            "margin-left" : "0px"
+        });
+//        $("#title-section").show();
+//        $("#detail-section").hide();
+    });
+    $("nav .detail-nav").click(function(){
+        $("nav .detail-nav").addClass("selected");
+        $("nav .title-nav").removeClass("selected");
+        $("main").animate({
+            "margin-left" : "-100%"
+        });
+//        $("#title-section").hide();
+//        $("#detail-section").show();
+    });
 }
