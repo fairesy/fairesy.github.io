@@ -5,12 +5,20 @@ $(document).ready(function(){
 
 function bindNavEvents(){
     $("nav .close-icon").on("click", function(){
-        $("nav").hide();
-        $(".menu-icon-wrapper").show();
+        $("nav").animate({
+            "height" : "toggle"
+        }, 150, function(){
+            $("nav").hide();
+            $(".menu-icon-wrapper").show(); 
+        });
     });
     $(".menu-icon-wrapper img").on("click", function(){
-        $("nav").show();
-        $(".menu-icon-wrapper").hide();
+        $("nav").animate({
+            "height" : "toggle"
+        }, 150, function(){
+            $("nav").show();
+            $(".menu-icon-wrapper").hide();
+        });
     });
 }
 
