@@ -58,8 +58,8 @@ function onClickMenu(){
     $("nav .title-nav").click(function(){
         $("nav .title-nav").addClass("selected");
         $("nav .detail-nav").removeClass("selected");
-        $("main").animate({
-            "margin-left" : "0px"
+        $("#detail-section").animate({
+            "left" : "100%"
         });
 //        $("#title-section").show();
 //        $("#detail-section").hide();
@@ -67,8 +67,8 @@ function onClickMenu(){
     $("nav .detail-nav").click(function(){
         $("nav .detail-nav").addClass("selected");
         $("nav .title-nav").removeClass("selected");
-        $("main").animate({
-            "margin-left" : "-100%"
+        $("#detail-section").animate({
+            "left" : "-0"
         });
 //        $("#title-section").hide();
 //        $("#detail-section").show();
