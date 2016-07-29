@@ -32,6 +32,7 @@ main section{
     padding-top: 4%;
     padding-bottom: 6%;
     box-sizing: border-box;
+    overflow-y: scroll;
 }
 #data-section .data{
     width: 100%;
