@@ -103,6 +103,7 @@ nav .close-icon{
 #sub-nav ul li{
     float: left;
     line-height: 35px;
+    height: 35px;
     list-style: none;
     text-align: center;
     vertical-align:baseline;
@@ -121,8 +122,23 @@ nav .close-icon{
     width: 65px;
     font-size: 10pt;
     font-weight: 700;
+    padding-top: 1px;
     color: rgb(200,200,200);
 }
 #sub-nav ul li.active{
     color: rgb(77,77,77);
+}
+#seven-button span, #sixteen-button span{
+    display: block;
+    width: 65%;
+    height: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+#seven-button span:hover, #sixteen-button span:hover{
+    cursor: pointer;
+    border-bottom: 3px solid rgb(77,77,77);
+}
+.selected{
+    border-bottom: 3px solid rgb(77,77,77);
 }

@@ -18,11 +18,15 @@ function onClickYearButton(e){
     $("#seven-button").click(function(){
         $("#seven").show();
         $("#sixteen").hide();
+        $("#sixteen-button span").removeClass("selected");
+        $("#seven-button span").addClass("selected");
     });
     
     $("#sixteen-button").click(function(){
         $("#sixteen").show();
         $("#seven").hide();
+        $("#sixteen-button span").addClass("selected");
+        $("#seven-button span").removeClass("selected");
     });
 //    
 //    var itaewon_07 = "https://junjimin0220.carto.com/viz/fe9ebc8c-5491-11e6-9719-0e98b61680bf/embed_map";
