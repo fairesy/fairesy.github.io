@@ -2,28 +2,124 @@
 <head>
 	<meta charset="utf-8">
 	<title>handmaiden survey</title>
+  <link rel="stylesheet" type="text/css" href="./handmaiden.css">
 </head>
 <body>
 	<h1>handmaiden</h1>
-	<form id='foo'>
-      <p>
-        <label>q1</label>
-        <input id='name' name='q1' type='text'>
-      </p><p>
-        <label>q2</label>
-        <input id='email' name='q2' type='text'>
-      </p><p>
-        <label>q3</label>
-        <input id='phone' name='q3' type='text'>
-      </p><p>
-        <label>q4</label>
-        <textarea id='message' name='q4' rows='5'></textarea>
-      </p>
-      <label>q5</label>
+  <main>
+    <div id="q1-vis" class="question-wrapper">
+    <div class="question">1. <아가씨>를 몇 번 보셨나요?</div>
+    <div class="square red">1</div>
+    <div class="square blue">2</div>
+    <div class="square red">3~5</div>
+    <div class="square blue">기타</div>
+  </div>
+  <div id="q2-vis" class="question-wrapper">
+    <div class="question">2. <아가씨>를 누구와 함께 보셨나요? (중복 선택 가능)</div>
+    <div class="square red">혼자</div>
+    <div class="square blue">친구</div>
+    <div class="square red">연인</div>
+    <div class="square blue">가족</div>
+  </div>
+  <div id="q3-vis" class="question-wrapper">
+    <div class="question">3. 무엇에 가장 끌려 <아가씨>를 보셨나요?</div>
+    <div class="square red">감독</div>
+    <div class="square blue">배우</div>
+    <div class="square red">입소문</div>
+    <div class="square blue">평론</div>
+    <div class="square red">원작</div>
+  </div>
+  <div id="q4-vis" class="question-wrapper">
+    <div class="question">4. 박찬욱 감독의 다른 작품 중 가장 인상 깊었던 영화는 무엇인가요?</div>
+    <div class="square red">1</div>
+    <div class="square blue">2</div>
+    <div class="square red">3</div>
+    <div class="square blue">4</div>
+    <div class="square red">5</div>
+  </div>
+  <div id="q5-vis" class="question-wrapper">
+    <div class="question">5. 아가씨의 원작 <핑거스미스>를 읽어보셨나요?</div>
+    <div class="square red">yes</div>
+    <div class="square blue">no</div>
+  </div>
+  <div id="q6-vis" class="question-wrapper">
+    <div class="question">6. 누가 먼저 좋아한 것 같나요?</div>
+    <div class="square red">숙희</div>
+    <div class="square blue">히데코</div>
+    <div class="square red">동시에</div>
+  </div>
+  <div id="q7-vis" class="question-wrapper">
+    <div class="question">7. 히데코의 대사 중 가장 속 보였던 말은?</div>
+    <div class="square red">1</div>
+    <div class="square blue">2</div>
+    <div class="square red">3</div>
+    <div class="square blue">4</div>
+  </div>
+  <div id="q8-vis" class="question-wrapper">
+    <div class="question">8. 후지와라 백작이 가장 찌질하다고 느껴진 장면은?</div>
+    <div class="square red">1</div>
+    <div class="square blue">2</div>
+    <div class="square red">3</div>
+    <div class="square blue">4</div>
+  </div>
+  <div id="q9-vis" class="question-wrapper">
+    <div class="question">9. 가장 징그러웠던 것은?</div>
+    <div class="square red">1</div>
+    <div class="square blue">2</div>
+    <div class="square red">3</div>
+    <div class="square blue">4</div>
+  </div>
+  <div id="q10-vis" class="question-wrapper">
+    <div class="question">10. 주요 인물 외에 가장 인상 깊은 배역은?</div>
+    <div class="square red">1</div>
+    <div class="square blue">2</div>
+    <div class="square red">3</div>
+    <div class="square blue">4</div>
+  </div>
+  <div id="q11-vis" class="question-wrapper">
+    <div class="question">11. 아가씨의 방에서 딱 하나만 가져올 수 있다면?</div>
+    <div class="square red"></div>
+    <div class="square blue"></div>
+    <div class="square red"></div>
+    <div class="square blue"></div>
+  </div>
+  <div id="q12-vis" class="question-wrapper">
+    <div class="question">12. 히데코는</div>
+    <div class="square red"></div>
+    <div class="square blue"></div>
+  </div>
+  <div id="q13-vis" class="question-wrapper">
+    <div class="question">13. 숙희는</div>
+    <div class="square red"></div>
+    <div class="square blue"></div>
+  </div>
+  <div id="q14-vis" class="question-wrapper">
+    <div class="question">14. <아가씨>의 별점을 매겨주세요.</div>
+    <div class="square red">1</div>
+    <div class="square blue">2</div>
+    <div class="square red">3</div>
+    <div class="square blue">4</div>
+    <div class="square red">5</div>
+  </div>
+    <form id='gform' method="post" action="https://script.google.com/macros/s/AKfycbyyuDJ4J2wEwat53WqUMXlNCqS39o7yKSw1wE14xdp17FaynfY/exec">
+      <input id='q1' name='q1' type='text'>
+      <input id='q2' name='q2' type='text'>
+      <input id='q3' name='q3' type='text'>
+      <input id='q4' name='q4' type='text'>
       <input id='q5' name='q5' type='text'>
-        <div id='success'></div>
-        <button type='submit'>Send</button>
+      <input id='q6' name='q6' type='text'>
+      <input id='q7' name='q7' type='text'>
+      <input id='q8' name='q8' type='text'>
+      <input id='q9' name='q9' type='text'>
+      <input id='q10' name='q10' type='text'>
+      <input id='q11' name='q11' type='text'>
+      <input id='q12' name='q12' type='text'>
+      <input id='q13' name='q13' type='text'>
+      <input id='q14' name='q14' type='text'>
+      <button type='submit'>Send</button>
     </form>
+  </main>
+  
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script type="text/javascript" src="./handmaiden-survey.js"></script>
 </body>

@@ -1,59 +1,58 @@
-// Variable to hold request
-var request;
-
-// Bind to the submit event of our form
-$("#foo").submit(function(event){
-
-    // Abort any pending request
-    if (request) {
-        request.abort();
-    }
-    // setup some local variables
-    var $form = $(this);
-
-    // Let's select and cache all the fields
-    var $inputs = $form.find("input, select, button, textarea");
-
-    // Serialize the data in the form
-    var serializedData = $form.serialize();
-
-    // Let's disable the inputs for the duration of the Ajax request.
-    // Note: we disable elements AFTER the form data has been serialized.
-    // Disabled form elements will not be serialized.
-    $inputs.prop("disabled", true);
-
-    // Fire off the request to /form.php
-    request = $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbyyuDJ4J2wEwat53WqUMXlNCqS39o7yKSw1wE14xdp17FaynfY/exec",
-        type: "post",
-        data: serializedData
+$( document ).ready(function() {
+    $("#q1-vis").on("click", function(e){
+        var $target = $(e.target);
+        $("#q1").val($target.text());
     });
-
-    // Callback handler that will be called on success
-    request.done(function (response, textStatus, jqXHR){
-        // Log a message to the console
-        console.log("Hooray, it worked!");
-        console.log(response);
-        console.log(textStatus);
-        console.log(jqXHR);
+    $("#q2-vis").on("click", function(e){
+        var $target = $(e.target);
+        $("#q2").val($target.text());
     });
-
-    // Callback handler that will be called on failure
-    request.fail(function (jqXHR, textStatus, errorThrown){
-        // Log the error to the console
-        console.error(
-            "The following error occurred: "+
-            textStatus, errorThrown
-        );
+    $("#q3-vis").on("click", function(e){
+        var $target = $(e.target);
+        $("#q3").val($target.text());
     });
-
-    // Callback handler that will be called regardless
-    // if the request failed or succeeded
-    request.always(function () {
-        // Reenable the inputs
-        $inputs.prop("disabled", false);
+    $("#q4-vis").on("click", function(e){
+        var $target = $(e.target);
+        $("#q4").val($target.text());
     });
-
-    // Prevent default posting of form
-    event.preventDefault();
+    $("#q5-vis").on("click", function(e){
+        var $target = $(e.target);
+        $("#q5").val($target.text());
+    });
+    $("#q6-vis").on("click", function(e){
+        var $target = $(e.target);
+        $("#q6").val($target.text());
+    });
+    $("#q7-vis").on("click", function(e){
+        var $target = $(e.target);
+        $("#q7").val($target.text());
+    });
+    $("#q8-vis").on("click", function(e){
+        var $target = $(e.target);
+        $("#q8").val($target.text());
+    });
+    $("#q9-vis").on("click", function(e){
+        var $target = $(e.target);
+        $("#q9").val($target.text());
+    });
+    $("#q10-vis").on("click", function(e){
+        var $target = $(e.target);
+        $("#q10").val($target.text());
+    });
+    $("#q11-vis").on("click", function(e){
+        var $target = $(e.target);
+        $("#q11").val($target.text());
+    });
+    $("#q12-vis").on("click", function(e){
+        var $target = $(e.target);
+        $("#q12").val($target.text());
+    });
+    $("#q13-vis").on("click", function(e){
+        var $target = $(e.target);
+        $("#q13").val($target.text());
+    });
+    $("#q14-vis").on("click", function(e){
+        var $target = $(e.target);
+        $("#q14").val($target.text());
+    });
 });

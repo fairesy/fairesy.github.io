@@ -1,0 +1,38 @@
+h1{
+  text-align: center;
+}
+main{
+  width: 50%;
+  margin: 0 auto;
+}
+.question-wrapper{
+  width: 100%;
+  overflow: auto;
+}
+.question{
+  width: 100%;
+}
+.square{
+  width:80px;
+  height:80px;
+  margin:20px;
+  border-radius:50%;
+  border: 2px solid rgb(40,40,40);
+  float:left;
+}
+.red{
+  /*background-color:rgb(250,0,0);*/
+}
+.blue{
+  /*background-color:rgb(0,0,250);*/
+}
+
+#gform input{
+  display: none;
+}
+#gform button{
+  width: 300px;
+  height: 60px;
+  background-color: #fff;
+  border: 2px solid rgb(40,40,40);
+}
